@@ -5,21 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namaste React</title>
+
 </head>
 
 <body>
     <div id="root">
-        <script>
-            // This use to create an element
-            const heading = document.createElement("h1");
 
-            // Adding text to the created element
-            heading.innerHTML = "Hello World from JavaScript!";
 
-            // Appending the element into DOM
-            const root = document.querySelector("#root");
-            root.append(heading);
-        </script>
+        <!-- CDN:- CDN are the Content Delivery Networks basically CDN is a place where React Library is Hosted -->
+
+        <!-- The first CDN Link is:- React Core React Library Algorithm of React -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+        <!-- The Second CDN Link is:- This is the React Library which is used for DOM Operations -->
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     </div>
 </body>
 
