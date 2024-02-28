@@ -9,7 +9,17 @@
 
 <body>
     <div id="root">
-        
+        <script>
+            // This use to create an element
+            const heading = document.createElement("h1");
+
+            // Adding text to the created element
+            heading.innerHTML = "Hello World from JavaScript!";
+
+            // Appending the element into DOM
+            const root = document.querySelector("#root");
+            root.append(heading);
+        </script>
     </div>
 </body>
 
