@@ -1,24 +1,39 @@
-// {} this is the place where you give the attribute to your tags
+/*Creating this type of Structure using React*
+ *
+ * <div id="parent">
+ *      <div id="child">
+ *          <h1>I'm h1 tag</h1>
+ *          <h2>I'm h2 tag</h2>
+ *      </div>
+ *      <div id="child">
+ *          <h1>I'm h1 tag</h1>
+ *          <h2>I'm h2 tag</h2>
+ *      </div>
+ * </div>
+ *
+ *
+ * ReactElement(Object) => HTML(Browser Understands)
+ */
 
-// React,createElement() finally gives an Object
-const heading = React.createElement(
-  // type
-  "h1",
 
-  // props
-  { id: "heading" },
 
-  // children
-  "Hello World from React"
-);
+// This Complexity of Code is Easily handle by JSX in React.js
+const parent = React.createElement("div", { id: "parent" }, [
+  React.createElement("div", { id: "child-1" }, [
+    React.createElement("h1", {}, "I'm h1 tag"),
+    React.createElement("h2", {}, "I'm h2 tag"),
+  ]),
+  React.createElement("div", { id: "child-2" }, [
+    React.createElement("h1", {}, "I'm h1 tag"),
+    React.createElement("h2", {}, "I'm h2 tag"),
+  ]),
 
-// heading becomes a "React Element" finally.
+  // If you give two elements as a child, then you have to wrap them in an array
+]);
 
-console.log(heading); // printing object
+
+console.log(parent); // print object
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
-// We are paasing a React element a JavaScript object
-
-// this .render is responsible for coverting this object into an "h1" tag
-root.render(heading);
+root.render(parent);
