@@ -5,34 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namaste React</title>
-
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
     <div id="root">
-
-
-        <!-- CDN:- CDN are the Content Delivery Networks basically CDN is a place where React Library is Hosted -->
-
-        <!-- The first CDN Link is:- React Core React Library Algorithm of React -->
+        
         <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 
-        <!-- The Second CDN Link is:- This is the React Library which is used for DOM Operations -->
         <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
-        <script>
-            // React.createElement is a function which is used to create a React Element
-
-            // createElement(type, props, children)
-            // This will create an h1 element inside React
-            const heading = React.createElement('h1', {}, "Hello World from React");
-
-            // Now put this h1 element inside DOM then we will use ReactDOM library
-            const root = ReactDOM.createRoot(document.querySelector("#root"));
-
-            // It will render this Heading in the Root Element similar to "append"
-            root.render(heading);
-        </script>
+        <script src="./App.js"></script>
     </div>
 </body>
 
