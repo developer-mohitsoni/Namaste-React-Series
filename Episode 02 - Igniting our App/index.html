@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <!-- This is always executed first because it doesn't matter about the render of the file because it is not a part of the React Application. or means not part of the root element. -->
+    <h1>Hello Top of Root!</h1>
+
+
+    <div id="root">
+        <!-- This is the root element where we will render our React application -->
+        
+        <!-- If something is already inside the root element, it will be replaced by the React application. -->
+        <h1>Always here!</h1>
+    </div>
+
+
+    <!-- Similarly this also always executed because it outside from the root element -->
+    <h1>Hello Bottom of Root!</h1>
+
+
+    <!-- Order of to import the files in sequence, If you change the order of the file it will throw an error -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="./App.js"></script>
+</body>
+
+</html>
