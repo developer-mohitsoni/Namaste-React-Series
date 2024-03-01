@@ -2,8 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 //! React Element
+
+//? Understand how to put ReactElement inside ReactElement
+const elem = <span>React Element</span>;
+
 const heading = (
   <h1 className="head1" tabIndex="1">
+    {elem}<br/>
     Namaste React By Akshay Saini ✅
   </h1>
 );
