@@ -11,29 +11,14 @@ const heading = (
 console.log(heading); // Object
 
 //! React Components:-
-// Everything is a Component in a React.
 
-// What is Component:- A component is a reusable piece of code that is responsible for rendering a part of the UI.
+//? React Functional Component
 
-// 1. Class Based Component:- Old Way of writing code
-
-// 2. Function Component:- New Way of writing code. Just a normal JS Function which return some piece of JSX or something that can return React Element.
-
-  //? React Functional Component
-  const HeadingComponent = () => {
-    return <h1>Namaste React Functional Component</h1>;
-  };
-
-  //* Same:-
-
-  const HeadingComponent2 = () => <h1 className="heading">Namaste React Functional Component</h1>;
-
-  //* Same:-
-
-  const HeadingComponent3 = () => (
+const HeadingComponent3 = () => (
+  <div id="container">
     <h1 className="heading">Namaste React Functional Component</h1>
-  );
-
+  </div>
+);
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
