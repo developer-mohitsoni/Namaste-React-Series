@@ -39,10 +39,10 @@ const HeadingComponent = () => (
     {/* Adding ReactElement inside Functional Component */}
     {heading}
 
+    {/* // These below three things are same way to render Functional Component */}
     <Title />
-    {/* // Both are same to render Functional Component */}
     <Title></Title>
-
+    
     {/* You can also call Title function inside it in Curly braces {} */}
 
     {Title()}
