@@ -8,7 +8,8 @@ const elem = <span>React Element</span>;
 
 const heading = (
   <h1 className="head1" tabIndex="1">
-    {elem}<br/>
+    {elem}
+    <br />
     Namaste React By Akshay Saini ✅
   </h1>
 );
@@ -37,7 +38,15 @@ const HeadingComponent = () => (
   <div id="container">
     {/* Adding ReactElement inside Functional Component */}
     {heading}
+
     <Title />
+    {/* // Both are same to render Functional Component */}
+    <Title></Title>
+
+    {/* You can also call Title function inside it in Curly braces {} */}
+
+    {Title()}
+
     <h1 className="heading">Namaste React Functional Component</h1>
   </div>
 );
