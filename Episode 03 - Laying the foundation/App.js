@@ -1,22 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// This Complexity of Code is Easily handle by JSX in React.js
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child-1" }, [
-    React.createElement("h1", {}, "I'm h1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag"),
-  ]),
-  React.createElement("div", { id: "child-2" }, [
-    React.createElement("h1", {}, "I'm h1 tag"),
-    React.createElement("h2", {}, "I'm h2 tag"),
-  ]),
+// React.createElement => Object => After Rendering into DOM => Becomes HTML Element
+const heading = React.createElement(
+  "h1",
+  { id: "heading" },
+  "Namaste React 🚀"
+);
 
-  // If you give two elements as a child, then you have to wrap them in an array
-]);
-
-console.log(parent); // print object
+console.log(heading); // Print Object
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
-root.render(parent);
+// root.render() takes this object and convert to and HTML element and push it io the Browser it will replace everything whatever written inside the <div id="root">......</div>
+root.render(heading);
