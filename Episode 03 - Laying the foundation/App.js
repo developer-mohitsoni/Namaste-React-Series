@@ -14,11 +14,13 @@ console.log(heading); // Object
 
 //? React Functional Component
 
-const Title = () => (
-  <h1 className="head" tabIndex="5">
-    Namaste React using JSX 🚀
-  </h1>
-);
+const Title = function () {
+  return (
+    <h1 className="head" tabIndex="5">
+      Namaste React using JSX 🚀
+    </h1>
+  );
+};
 
 // How to render Title Component inside this HeadingComponent?
 //! Component Comosition
