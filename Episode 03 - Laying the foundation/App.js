@@ -14,7 +14,7 @@ console.log(heading); // Object
 
 //? React Functional Component
 
-const HeadingComponent3 = () => (
+const HeadingComponent = () => (
   <div id="container">
     <h1 className="heading">Namaste React Functional Component</h1>
   </div>
@@ -22,4 +22,8 @@ const HeadingComponent3 = () => (
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
-root.render(heading);
+// Render React Element
+// root.render(heading);
+
+// Render Functional Component
+root.render(<HeadingComponent />);
