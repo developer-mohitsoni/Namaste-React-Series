@@ -8,9 +8,16 @@ const heading = React.createElement(
   "Namaste React 🚀"
 );
 
-console.log(heading); // Print Object
+console.log(heading);
+
+
+
+// JSX:- JSX is a JavaScript Syntax which is easier to create React Element.
+// JSX - is not HTML or XML but it looks like HTML or XML syntax
+const jsxHeading = <h1 id="heading">Namaste React using JSX ✅</h1>;
+
+console.log(jsxHeading);
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
-// root.render() takes this object and convert to and HTML element and push it io the Browser it will replace everything whatever written inside the <div id="root">......</div>
-root.render(heading);
+root.render(jsxHeading);
