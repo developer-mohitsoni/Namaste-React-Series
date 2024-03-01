@@ -26,13 +26,12 @@ const Title = function () {
 //! Component Comosition
 
 //? We can write any JavaScript expression inside the {} in JSX
-const name = "Anurag Singh ProCodrr";
+
+//? Understand how to put ReactElement inside the JSX Functional Component
 const HeadingComponent = () => (
   <div id="container">
-    {/* {number} */}
-    <h2>Hello {name}</h2>
-    <h2>{500 + 600}</h2>
-    <h2>{console.log("Hello Mohit Soni")}</h2>
+    {/* Adding ReactElement inside Functional Component */}
+    {heading}
     <Title />
     <h1 className="heading">Namaste React Functional Component</h1>
   </div>
