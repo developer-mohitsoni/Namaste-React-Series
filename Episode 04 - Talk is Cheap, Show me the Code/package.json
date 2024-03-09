@@ -1,0 +1,27 @@
+{
+  "name": "episode-04---talk-is-cheap-show-me-the-code",
+  "version": "1.0.0",
+  "description": "Episode 04 - Talk is Cheap, Show me the Code!",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [
+    "React",
+    "NamasteReact"
+  ],
+  "author": "Mohit Soni",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserlist":[
+    "last 2 versions"
+  ]
+}
