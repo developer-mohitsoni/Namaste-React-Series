@@ -27,3 +27,15 @@
         <li>Contact</li>
     </ul>
 </ul>
+
+<h2>Two types of Export/Import</h2>
+
+- Default Export/Import
+
+  export default Component;
+  import Component from "path";
+
+- Named Export/Import
+
+  export const Componenet;
+  import {Component} from "path";
