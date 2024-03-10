@@ -49,11 +49,22 @@ const RestaurantCard = (props) => {
   // console.log(props);
   // Object Destructuring
   const { restData } = props;
+
+  const {
+    cloudinaryImageId,
+    name,
+    avgRatingString,
+    cuisines,
+    costForTwo,
+    locality,
+  } = restData?.info;
+
+  const { lastMileTravelString } = restData?.info?.sla;
   return (
     <div className="rest-card" style={styleCard} data-aos="zoom-in">
       <div className="food-img">
         <img
-          src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${restData.info.cloudinaryImageId}`}
+          src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
           alt="Shankar Foods"
         />
       </div>
@@ -63,7 +74,7 @@ const RestaurantCard = (props) => {
           style={{ display: "flex", justifyContent: "space-between" }}
         >
           <div className="name" style={{ margin: "0.5rem 0px 0.37rem" }}>
-            <h3 style={{ margin: "unset" }}>{restData.info.name}</h3>
+            <h3 style={{ margin: "unset" }}>{name}</h3>
           </div>
           <div
             className="rating"
@@ -80,7 +91,7 @@ const RestaurantCard = (props) => {
               }}
             >
               <div className="rating-number" style={{ color: "#fff" }}>
-                {restData.info.avgRatingString}
+                {avgRatingString}
               </div>
               <div className="star">
                 <i className="sc-rbbb40-1 iFnyeo" color="#FFFFFF">
@@ -120,7 +131,7 @@ const RestaurantCard = (props) => {
                 textAlign: "left",
               }}
             >
-              {restData.info.cuisines.join(", ")}
+              {cuisines.join(", ")}
             </p>
           </div>
           <div className="price" style={{ margin: "7.5px" }}>
@@ -134,7 +145,7 @@ const RestaurantCard = (props) => {
                 textAlign: "left",
               }}
             >
-              {restData.info.costForTwo}
+              {costForTwo}
             </p>
           </div>
         </div>
@@ -155,12 +166,12 @@ const RestaurantCard = (props) => {
                 textAlign: "left",
               }}
             >
-              {restData.info.locality}
+              {locality}
             </p>
           </div>
           <div className="distance" style={{ margin: "7.5px" }}>
             <p style={{ margin: "unset" }}>
-              <b>{restData.info.sla.lastMileTravelString}</b>
+              <b>{lastMileTravelString}</b>
             </p>
           </div>
         </div>
@@ -462,11 +473,7 @@ const restList = [
       locality: "Shankar_Vihar",
       areaName: "Shankar_Vihar",
       costForTwo: "₹250 for two",
-      cuisines: [
-        "Beverages",
-        "Fast Food",
-        "Snacks"
-      ],
+      cuisines: ["Beverages", "Fast Food", "Snacks"],
       parentId: "21550",
       avgRatingString: "NEW",
       sla: {
@@ -836,18 +843,13 @@ const Body = () => {
         className="rest-container"
         style={{ display: "flex", flexWrap: "wrap", gap: "75px" }}
       >
-        <RestaurantCard
-          // restData here is a "props" and {resObj} is a attributes of props
-          restData={restList[0]}
-        />
-        <RestaurantCard restData={restList[1]} />
-        <RestaurantCard restData={restList[2]} />
-        <RestaurantCard restData={restList[3]} />
-        <RestaurantCard restData={restList[4]} />
-        <RestaurantCard restData={restList[5]} />
-        <RestaurantCard restData={restList[6]} />
-        <RestaurantCard restData={restList[7]} />
-        <RestaurantCard restData={restList[8]} />
+        {/* Looping restList using map */}
+        {restList.map((restaurant) => (
+          //! You have to always mention unique key over here
+          <RestaurantCard key={restaurant.info.id} restData={restaurant} />
+
+          //* not using keys (not acceptable) <<<< index as key <<<<<<<<<<<<< unique id (best practice)
+        ))}
       </div>
     </div>
   );
