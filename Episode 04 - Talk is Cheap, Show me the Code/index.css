@@ -56,4 +56,29 @@
     22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
     41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
     100px 100px 80px rgba(0, 0, 0, 0.07);
+
+  .cuisines p {
+    max-width: 50px;
+    display: inline;
+    height: 33px;
+    text-wrap: wrap;
+  }
+  .price p {
+    display: inline;
+    height: 33px;
+    text-wrap: wrap;
+  }
 }
+/*
+.cuisines p:hover {
+  max-width: 50px;
+  display: inline;
+  height: 33px;
+  text-wrap: wrap;
+}
+.price p:hover {
+  display: inline;
+  height: 33px;
+  text-wrap: wrap;
+}
+*/
