@@ -8,10 +8,11 @@ import Body from "./components/Body";
 //? React Functional Component
 
 const AppLayout = () => {
+  //* console.log(<Body />); // This is a React Virtal DOM it prints an Object
   return (
     <div className="app">
       <Header />
-      <Body/>
+      <Body />
     </div>
   );
 };
