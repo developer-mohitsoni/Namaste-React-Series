@@ -69,16 +69,7 @@
     text-wrap: wrap;
   }
 }
-/*
-.cuisines p:hover {
-  max-width: 50px;
-  display: inline;
-  height: 33px;
-  text-wrap: wrap;
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
 }
-.price p:hover {
-  display: inline;
-  height: 33px;
-  text-wrap: wrap;
-}
-*/

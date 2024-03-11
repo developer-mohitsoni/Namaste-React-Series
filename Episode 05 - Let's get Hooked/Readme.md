@@ -39,3 +39,10 @@
 
   export const Componenet;
   import {Component} from "path";
+
+## React Hooks
+
+<p>Normal JS utility Functions</p>
+
+- useState() -Superpowerful State Variables in React
+- useEffect()
