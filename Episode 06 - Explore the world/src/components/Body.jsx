@@ -33,11 +33,14 @@ const Body = () => {
   //* Shimmer UI: A Better Way to Show Loading States
 
   //* Conditional Rendering - If list of restaurants is empty, show shimmer UI
-  if (listOfRestaurants.length === 0) {
-    return <ShimmerUI />;
-  }
+  // if (listOfRestaurants.length === 0) {
+  //   return <ShimmerUI />;
+  // }
 
-  return (
+  //* We can aslo use Ternary Operator as well to render Shimmer UI according to conditional rendering
+  return listOfRestaurants.length === 0 ? (
+    <ShimmerUI />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
