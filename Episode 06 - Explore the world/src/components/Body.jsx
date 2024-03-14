@@ -27,6 +27,14 @@ const Body = () => {
     );
   };
 
+
+  if(listOfRestaurants.length === 0){
+    const loader = ()=>{
+      return <div className="loader"></div>
+    }
+    return loader();
+  }
+
   return (
     <div className="body">
       <div className="filter">
