@@ -31,8 +31,10 @@ const Body = () => {
   // Showing a spinner is not a good practice
 
   //* Shimmer UI: A Better Way to Show Loading States
+
+  //* Conditional Rendering - If list of restaurants is empty, show shimmer UI
   if (listOfRestaurants.length === 0) {
-    return <ShimmerUI />
+    return <ShimmerUI />;
   }
 
   return (
