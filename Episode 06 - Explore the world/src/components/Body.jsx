@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import restList from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../index.css";
 
 const Body = () => {
@@ -8,8 +8,11 @@ const Body = () => {
   //! Array Destructuring
   const [listOfRestaurants, setListOfRestaurants] = useState(restList);
 
-  //* Normal JS Variable
-  // let listOfRestaurants;
+  useEffect(() => {
+    console.log("useEffect() called");  // Then then will be rendered
+  }, []);
+
+  console.log("Body Component Rendered"); // This will render first
 
   return (
     <div className="body">
