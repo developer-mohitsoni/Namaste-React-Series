@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
+import ShimmerUI from "./ShimmerUI";
 import "../../index.css";
 
 const Body = () => {
@@ -30,8 +31,8 @@ const Body = () => {
   // Showing a spinner is not a good practice
 
   //* Shimmer UI: A Better Way to Show Loading States
-  if(listOfRestaurants.length === 0){
-    
+  if (listOfRestaurants.length === 0) {
+    return <ShimmerUI />
   }
 
   return (

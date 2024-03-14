@@ -109,3 +109,15 @@
   }
 }
 */
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 75px;
+}
+.shimmer-card {
+  margin-block: 44px;
+  width: 294.8px;
+  height: 350px;
+  border-radius: 1.5rem;
+  background-color: #f0f0f0;
+}
