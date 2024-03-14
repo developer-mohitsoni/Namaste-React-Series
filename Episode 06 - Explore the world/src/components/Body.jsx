@@ -8,9 +8,10 @@ const Body = () => {
   //! Array Destructuring
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
+  //*  Whenever state variables updtaes, react triggers a reconciliation cycle(Re-rendering of the component).
   const [searchText, setSearchText] = useState("");
 
-  console.log("Body Render");  //* Whenever my Search input filed is updated, my body component is re-rendered 🚀
+  console.log("Body Render"); //* Whenever my Search input filed is updated, my body component is re-rendered 🚀
 
   useEffect(() => {
     fetchData();
@@ -52,7 +53,7 @@ const Body = () => {
             type="text"
             className="search-box"
             placeholder="Search for Restaurants"
-            value={searchText}  // here empty value is tightly coupled with searchText, Now wwhen we want to change the value of input, we have to change the value of searchText. So, in that case we use onChange event to change the value of searchText with new updated value
+            value={searchText} // here empty value is tightly coupled with searchText, Now wwhen we want to change the value of input, we have to change the value of searchText. So, in that case we use onChange event to change the value of searchText with new updated value
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
@@ -61,6 +62,13 @@ const Body = () => {
             onClick={() => {
               // Filter the restaurant cards and update the UI
               console.log(searchText);
+
+              const filteredSearchRestraua = listOfRestaurants.filter((res) => {
+                //* includes will check if the searchText is present in the name of the restaurant
+                return(res.info.name.includes(searchText))
+              });
+
+              setListOfRestaurants(filteredSearchRestraua);
             }}
           >
             Search
