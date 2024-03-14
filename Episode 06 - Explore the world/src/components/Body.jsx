@@ -27,12 +27,11 @@ const Body = () => {
     );
   };
 
+  // Showing a spinner is not a good practice
 
+  //* Shimmer UI: A Better Way to Show Loading States
   if(listOfRestaurants.length === 0){
-    const loader = ()=>{
-      return <div className="loader"></div>
-    }
-    return loader();
+    
   }
 
   return (
