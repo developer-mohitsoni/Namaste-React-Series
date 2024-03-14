@@ -5,7 +5,7 @@ import "../../index.css";
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   //* But How this const value is updated when we click on button?
-  
+
   //* when we re-render the component by click on the button, this btnNameReact will be a new variable and it will be re-rendered with new value
 
   //! useState will re-render whole componenet when state changes
@@ -25,7 +25,9 @@ const Header = () => {
           <button
             className="login"
             onClick={() => {
-              setBtnNameReact("Logout");
+              btnNameReact === "Login"
+                ? setBtnNameReact("Logout")
+                : setBtnNameReact("Login");
             }}
           >
             {btnNameReact}
