@@ -10,6 +10,8 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  console.log("Body Render");  //* Whenever my Search input filed is updated, my body component is re-rendered 🚀
+
   useEffect(() => {
     fetchData();
   }, []);
