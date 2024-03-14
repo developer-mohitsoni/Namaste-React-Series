@@ -8,6 +8,8 @@ const Body = () => {
   //! Array Destructuring
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
+  const [searchText, setSearchText] = useState("");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -43,6 +45,25 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            placeholder="Search for Restaurants"
+            value={searchText}  // here empty value is tightly coupled with searchText, Now wwhen we want to change the value of input, we have to change the value of searchText. So, in that case we use onChange event to change the value of searchText with new updated value
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              // Filter the restaurant cards and update the UI
+              console.log(searchText);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn "
           onClick={() => {
