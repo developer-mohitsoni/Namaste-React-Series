@@ -1,0 +1,27 @@
+{
+  "name": "episode-6.2--cors-plugin-issue-solved",
+  "version": "1.0.0",
+  "description": "Episode 6.2 - CORS Plugin Issue Solved",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [
+    "React",
+    "NamasteReact"
+  ],
+  "author": "Mohit Soni",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserlist":[
+    "last 2 versions"
+  ]
+}
