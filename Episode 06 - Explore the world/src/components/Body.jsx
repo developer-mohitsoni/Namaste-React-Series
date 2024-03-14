@@ -11,6 +11,8 @@ const Body = () => {
   //*  Whenever state variables updtaes, react triggers a reconciliation cycle(Re-rendering of the component).
   const [searchText, setSearchText] = useState("");
 
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+
   console.log("Body Render"); //* Whenever my Search input filed is updated, my body component is re-rendered 🚀
 
   useEffect(() => {
@@ -29,6 +31,9 @@ const Body = () => {
 
     //! Optional Chaining
     setListOfRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -56,6 +61,11 @@ const Body = () => {
             value={searchText} // here empty value is tightly coupled with searchText, Now wwhen we want to change the value of input, we have to change the value of searchText. So, in that case we use onChange event to change the value of searchText with new updated value
             onChange={(e) => {
               setSearchText(e.target.value);
+
+              // Implement this feature only when we want to filter the restaurant cards when the input field is empty
+              if (e.target.value === "") {
+                setFilteredRestaurant(listOfRestaurants);
+              }
             }}
           />
           <button
@@ -65,10 +75,12 @@ const Body = () => {
 
               const filteredSearchRestraua = listOfRestaurants.filter((res) => {
                 //* includes will check if the searchText is present in the name of the restaurant
-                return(res.info.name.includes(searchText))
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
               });
 
-              setListOfRestaurants(filteredSearchRestraua);
+              setFilteredRestaurant(filteredSearchRestraua);
             }}
           >
             Search
@@ -82,7 +94,7 @@ const Body = () => {
             );
             // console.log(listOfRestaurants);
             // Updating State from Local State Variable
-            setListOfRestaurants(filteredList);
+            setFilteredRestaurant(filteredList);
           }}
         >
           Top Rated Restaurants
@@ -93,7 +105,7 @@ const Body = () => {
         style={{ display: "flex", flexWrap: "wrap", gap: "75px" }}
       >
         {/* Looping restList using map */}
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           //! You have to always mention unique key over here
           <RestaurantCard key={restaurant.info.id} restData={restaurant} />
 
