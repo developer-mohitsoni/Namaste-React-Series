@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Cart from "./components/Cart";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -37,6 +38,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />, // Load Contact Component when the route matches /contact
+      },
+      {
+        path: "/cart",
+        element: <Cart />, // Load Cart Component when the route matches /cart
       },
     ],
     errorElement: <Error />, // Load Error Component when the route does not match any route above it
