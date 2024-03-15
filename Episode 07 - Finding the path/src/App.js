@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //! React Components:-
@@ -24,6 +25,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />, // Load AppLayout Component when the route matches /
+    errorElement: <Error />, // Load Error Component when the route does not match any route above it
   },
   {
     path: "/about",
@@ -32,7 +34,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />, // Load Contact Component when the route matches /contact
-  }
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
