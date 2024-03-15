@@ -29,14 +29,19 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
           <li>
-            <a href="/about">About Us</a>
+            {/*! When i click on "Home" page it will not refresh the whole page, it will just fetches  data from server */}
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>Cart</li>
+          <li>
+            <Link to="/cart">Cart</Link>
+          </li>
           <button
             className="login"
             onClick={() => {
