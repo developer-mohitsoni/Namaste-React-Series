@@ -16,7 +16,12 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
+      {/** If path = "/" */}
       <Body />
+      {/** If path = "/about" */}
+      <About />
+      {/** If path = "/contact" */}
+      <Contact />
     </div>
   );
 };
@@ -25,15 +30,21 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />, // Load AppLayout Component when the route matches /
+    children: [
+      {
+        path: "/",
+        element: <Body />, // Load Body Component when the route matches /
+      },
+      {
+        path: "/about",
+        element: <About />, // Load About Component when the route matches /about
+      },
+      {
+        path: "/contact",
+        element: <Contact />, // Load Contact Component when the route matches /contact
+      },
+    ],
     errorElement: <Error />, // Load Error Component when the route does not match any route above it
-  },
-  {
-    path: "/about",
-    element: <About />, // Load About Component when the route matches /about
-  },
-  {
-    path: "/contact",
-    element: <Contact />, // Load Contact Component when the route matches /contact
   },
 ]);
 
