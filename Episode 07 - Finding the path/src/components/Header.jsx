@@ -16,10 +16,11 @@ const Header = () => {
   //* If no dependency array => useEffect is called on every render
 
   //* If dependency arraay is empty = [] => useEffect is called on only initial render (just once)
-  
+
+  //* If dependency array is [btnNameReact] => useEffect is called every time btnNameReact is updated or changes.
   useEffect(() => {
     console.log("useEffect called");
-  }, []); //* Here we put the dependency array over here. So, this dependency array changes the behaviour ofnit's render
+  }, [btnNameReact]); //* Here we put the dependency array over here. So, this dependency array changes the behaviour ofnit's render
   return (
     <div className="header">
       <div className="logo-container">
