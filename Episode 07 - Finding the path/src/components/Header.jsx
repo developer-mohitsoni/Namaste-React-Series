@@ -12,11 +12,11 @@ const Header = () => {
   console.log("Header Render");
 
   //* useEffect() will be called every time my Header Component renders my useEffect is called.
-  useEffect
-  (() => {
+
+  //* If no dependency array => useEffect is called on every render
+  useEffect(() => {
     console.log("useEffect called");
-  },
-    []); //* Here we put the dependency array over here. So, this dependency array changes the behaviour ofnit's render
+  }); //* Here we put the dependency array over here. So, this dependency array changes the behaviour ofnit's render
   return (
     <div className="header">
       <div className="logo-container">
