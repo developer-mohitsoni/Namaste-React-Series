@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import {createBrowserRouter} from "react-router-dom";
+import About from "./components/About";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //! React Components:-
 
@@ -25,8 +26,9 @@ const appRouter = createBrowserRouter([
   },
   {
     path: "/about",
-  }
+    element: <About />, // Load About Component when the route matches /about
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);
