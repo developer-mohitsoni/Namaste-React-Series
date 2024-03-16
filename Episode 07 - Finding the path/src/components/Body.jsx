@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import ShimmerUI from "./ShimmerUI";
+import { Link } from "react-router-dom";
 import "../../index.css";
 
 const Body = () => {
@@ -107,7 +108,13 @@ const Body = () => {
         {/* Looping restList using map */}
         {filteredRestaurant.map((restaurant) => (
           //! You have to always mention unique key over here
-          <RestaurantCard key={restaurant.info.id} restData={restaurant} />
+
+          <Link
+            to={"/restaurants/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            <RestaurantCard restData={restaurant} />
+          </Link>
 
           //* not using keys (not acceptable) <<<< index as key <<<<<<<<<<<<< unique id (best practice)
         ))}
