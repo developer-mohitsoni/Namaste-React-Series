@@ -12,7 +12,7 @@ class UserClass extends React.Component {
       },
     };
 
-    //console.log(this.props.name + " Child Constructor");
+    console.log(this.props.name + " Child Constructor");
   }
 
   async componentDidMount() {
@@ -30,8 +30,16 @@ class UserClass extends React.Component {
     console.log(json);
   }
 
+  componentDidUpdate() {
+    console.log("Component DidUpdate");
+  }
+
+  componentWillUnmount() {
+    console.log("Component Will Unmount");
+  }
+
   render() {
-    //console.log(this.props.name + " Child Render");
+    // console.log(this.props.name + " Child Render");
 
     const { name, location, avatar_url } = this.state.userInfo;
 
@@ -47,3 +55,22 @@ class UserClass extends React.Component {
 }
 
 export default UserClass;
+
+/*
+ * ------- MOUNTING CYCLE --------
+ *  Constructor (dummy)
+ *  Render (dummy)
+ *      <HTML Dummy>
+ *  Component Did Mount
+ *      <API CALL>
+ *      <this.setState>  -> state variale is updated
+ *
+ * ------- UPDATING CYCLE --------
+ *      render(API data)
+ *      <HTML (new API data)>
+ *      componentDidUpdate
+ *
+ *
+ *
+ *
+ */
