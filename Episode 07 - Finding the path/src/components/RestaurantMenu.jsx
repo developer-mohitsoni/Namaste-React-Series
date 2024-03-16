@@ -1,8 +1,13 @@
 import ShimmerUI from "./ShimmerUI";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
+
+  const params = useParams(); // This will provide you to fetch resId from API link, Here "paramas" is a object containing resId
+
+  console.log(params);  // display resId in console
 
   useEffect(() => {
     fetchMenu();
