@@ -16,6 +16,8 @@ class UserClass extends React.Component {
 
   componentDidMount() {
     console.log("Child Component DidMount"); //* Fifth method is render after the component is mounted/load
+
+    //* API Call
   }
 
   render() {

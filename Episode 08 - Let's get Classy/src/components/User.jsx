@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const User = ({ name }) => {
   const [count, setCount] = useState(0);
@@ -9,6 +9,10 @@ const User = ({ name }) => {
   const handleClick2 = () => {
     if (count > 0) setCount(count - 1);
   };
+
+  useEffect(() => {
+    // API Calls
+  }, []);
 
   return (
     <div className="user-card">
