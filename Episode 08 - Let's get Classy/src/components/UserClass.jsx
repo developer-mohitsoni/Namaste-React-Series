@@ -4,51 +4,43 @@ class UserClass extends React.Component {
   constructor(props) {
     super(props);
 
-    //* creating state variable of the class based component
     this.state = {
-      count: 0,
+      userInfo: {
+        name: "Dummy Name",
+        location: "Default",
+        avatar_url: "https://dummy-photo.com",
+      },
     };
 
-    console.log(props); //* Display props
-
-    console.log(this.props.name + " Child Constructor"); //* Third Child Constructor is Invoke
+    //console.log(this.props.name + " Child Constructor");
   }
 
-  componentDidMount() {
-    console.log(this.props.name + " Child Component DidMount"); //* Fifth method is render after the component is mounted/load
-
+  async componentDidMount() {
+    //console.log(this.props.name + " Child Component DidMount");
     //* API Call
+
+    const data = await fetch("https://api.github.com/users/akshaymarch7");
+
+    const json = await data.json();
+
+    this.setState({
+      userInfo: json,
+    });
+
+    console.log(json);
   }
 
   render() {
-    const { name, location, contact } = this.props;
-    const { count } = this.state;
+    //console.log(this.props.name + " Child Render");
 
-    console.log(this.props.name + " Child Render"); //* Fourth Child render() this component
-
-    const onHandleClick = () => {
-      this.setState({
-        count: count + 1,
-      });
-    };
-
-    //* NEVER UPDATES STATE VARIABLES DIRECTLY
-    const onHandleClick2 = () => {
-      if (count > 0) {
-        this.setState({
-          count: count - 1,
-        });
-      }
-    };
+    const { name, location, avatar_url } = this.state.userInfo;
 
     return (
       <div className="user-card">
-        <h1>Count: {count} </h1>
-        <button onClick={onHandleClick}>Count Increase</button>&nbsp;&nbsp;
-        <button onClick={onHandleClick2}>Count Decrease</button>
+        <img src={avatar_url} alt="Akshay Saini Profile" />
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
-        <h4>Contact: {contact}</h4>
+        <h4>Contact: @akshaymarch7</h4>
       </div>
     );
   }

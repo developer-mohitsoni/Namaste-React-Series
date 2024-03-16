@@ -7,32 +7,24 @@ class About extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("Parent Constructor"); //* First Parent Constructor Invoke
+    //console.log("Parent Constructor");
   }
 
   componentDidMount() {
-    console.log("Parent Component DidMount"); //* Sixth method is render after the Child Component is not fully Mounted
+    //console.log("Parent Component DidMount"); 
   }
 
   render() {
-    console.log("Parent Render"); //* Second Parent render() this component
+    console.log("Parent Render");
     return (
       <div>
         <h1>About Us</h1>
         <h2>This is Namaste React WebSeries</h2>
-        <User name={"Mohit Soni (function)"} />
-        {/*Import Functional Based Component*/}
         <UserClass
           name={"Mohit Soni (class)"}
           location={"UttarPradesh"}
           contact={"developer_mohitsoni@outlook.com"}
         />
-        <UserClass
-          name={"Akshay Saini (class)"}
-          location={"Banglore"}
-          contact={"akshaySaini@outlook.com"}
-        />
-        {/*Import Class Based Component*/}
       </div>
     );
   }
