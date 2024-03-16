@@ -7,11 +7,15 @@ class About extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("Parent Constructor");  //* First Parent Constructor Invoke
+    console.log("Parent Constructor"); //* First Parent Constructor Invoke
+  }
+
+  componentDidMount() {
+    console.log("Parent Component DidMount"); //* Sixth method is render after the Child Component is not fully Mounted
   }
 
   render() {
-    console.log("Parent Render"); //* Then Parent render() this component
+    console.log("Parent Render"); //* Second Parent render() this component
     return (
       <div>
         <h1>About Us</h1>
