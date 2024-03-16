@@ -9,7 +9,7 @@ const About = () => {
       <User name={"Mohit Soni (function)"} /> {/*Import Functional Based Component*/}
 
 
-      <UserClass name={"Mohit Soni (class)"}/> {/*Import Class Based Component*/}
+      <UserClass name={"Mohit Soni (class)"} location= {"UttarPradesh"} contact = {"developer_mohitsoni@outlook.com"} /> {/*Import Class Based Component*/}
     </div>
   );
 };
