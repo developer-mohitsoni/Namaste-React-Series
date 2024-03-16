@@ -1,6 +1,6 @@
 # Namaste React 🚀
 
-<p align="center">Episode 06 - Explore the world</p>
+<p align="center">Episode 07 - Explore the world</p>
 
 # Food Ordering Webiste 😋
 
