@@ -6,6 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 //! React Components:-
@@ -17,7 +18,7 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Outlet/>
+      <Outlet />
     </div>
   );
 };
@@ -42,6 +43,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />, // Load Cart Component when the route matches /cart
+      },
+      {
+        path: "/restaurants/:resId", // Load Restaurants Component when the route matches /restaurants with dynamic parameter :resId
+
+        element: <RestaurantMenu />, // Load Restaurants Component when the route matches /restaurants with dynamic parameter :resId
       },
     ],
     errorElement: <Error />, // Load Error Component when the route does not match any route above it
