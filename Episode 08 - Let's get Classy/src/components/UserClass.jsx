@@ -13,6 +13,11 @@ class UserClass extends React.Component {
 
     console.log("Child Constructor"); //* First Child Constructor is Invoke
   }
+
+  componentDidMount() {
+    console.log("Child Component DidMount"); //* This method is render after the component is mounted/load
+  }
+
   render() {
     const { name, location, contact } = this.props;
     const { count } = this.state;
