@@ -11,11 +11,11 @@ class UserClass extends React.Component {
 
     console.log(props); //* Display props
 
-    console.log("Child Constructor"); //* Third Child Constructor is Invoke
+    console.log(this.props.name + " Child Constructor"); //* Third Child Constructor is Invoke
   }
 
   componentDidMount() {
-    console.log("Child Component DidMount"); //* Fifth method is render after the component is mounted/load
+    console.log(this.props.name + " Child Component DidMount"); //* Fifth method is render after the component is mounted/load
 
     //* API Call
   }
@@ -24,7 +24,7 @@ class UserClass extends React.Component {
     const { name, location, contact } = this.props;
     const { count } = this.state;
 
-    console.log("Child Render"); //* Fourth Child render() this component
+    console.log(this.props.name + " Child Render"); //* Fourth Child render() this component
 
     const onHandleClick = () => {
       this.setState({

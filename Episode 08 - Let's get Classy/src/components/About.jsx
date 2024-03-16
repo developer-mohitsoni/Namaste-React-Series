@@ -27,6 +27,11 @@ class About extends React.Component {
           location={"UttarPradesh"}
           contact={"developer_mohitsoni@outlook.com"}
         />
+        <UserClass
+          name={"Akshay Saini (class)"}
+          location={"Banglore"}
+          contact={"akshaySaini@outlook.com"}
+        />
         {/*Import Class Based Component*/}
       </div>
     );
@@ -34,3 +39,22 @@ class About extends React.Component {
 }
 
 export default About;
+
+/*
+ * - Parent Constructor
+ *  - Parent render
+ *    - Mohit Functional Component Render
+ *
+ *    - Mohit Child Constructor
+ *    - Mohit render
+ *
+ *    - Akshay Constructor
+ *    - Akshay render
+ *
+ *    <DOM UPDATED - IN SINGLE BATCH>\
+ *    - Mohit ComponentDidMount
+ *    - Akshay ComponentDidMount
+ *
+ *  - Parent ComponentDidMount
+ *
+ */
