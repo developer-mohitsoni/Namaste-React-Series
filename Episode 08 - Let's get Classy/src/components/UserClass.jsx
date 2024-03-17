@@ -30,7 +30,17 @@ class UserClass extends React.Component {
     console.log(json);
   }
 
-  componentDidUpdate() {
+  // If we want to update the count after when it is triggered or call... We can do like this.
+
+  // In a ClassBasedComponent we can do this process in a hactic way like this:-
+
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      prevState.count !== this.state.count ||
+      prevState.count !== this.state.count2
+    ) {
+      // code
+    }
     console.log("Component DidUpdate");
   }
 

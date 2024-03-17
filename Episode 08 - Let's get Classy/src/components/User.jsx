@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const User = ({ name }) => {
   const [count, setCount] = useState(0);
+  const [count2, setCount2] = useState(0);
 
   const handleClick = () => {
     setCount(count + 1);
@@ -10,9 +11,10 @@ const User = ({ name }) => {
     if (count > 0) setCount(count - 1);
   };
 
+  //* If we want to update the count after when it is triggered or call... We can do like this in Functional Component.
   useEffect(() => {
     // API Calls
-  }, []);
+  }, [count, count2]);
 
   return (
     <div className="user-card">
