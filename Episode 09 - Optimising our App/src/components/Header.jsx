@@ -49,6 +49,9 @@ const Header = () => {
           <li>
             <Link to="/cart">Cart</Link>
           </li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
+          </li>
           <button className="login" onClick={toggleLogin}>
             {isLoggedIn ? "Logout" : "Login"}
           </button>
