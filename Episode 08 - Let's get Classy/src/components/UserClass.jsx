@@ -30,16 +30,17 @@ class UserClass extends React.Component {
     console.log(json);
   }
 
-  // If we want to update the count after when it is triggered or call... We can do like this.
+  //* Suppose i want to do something when count is changing and i want to do something when my count2 chnaging. So, in Class Based Component we can do like this:-
 
-  // In a ClassBasedComponent we can do this process in a hactic way like this:-
+  //* This is a hactic way to do this process in ClassBasedComponent.
 
   componentDidUpdate(prevProps, prevState) {
-    if (
-      prevState.count !== this.state.count ||
-      prevState.count !== this.state.count2
-    ) {
-      // code
+    if (prevState.count !== this.state.count) {
+      // code for count1
+    }
+
+    if (prevState.count2 !== this.state.count2) {
+      // code for count1
     }
     console.log("Component DidUpdate");
   }

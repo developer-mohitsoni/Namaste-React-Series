@@ -11,10 +11,14 @@ const User = ({ name }) => {
     if (count > 0) setCount(count - 1);
   };
 
-  //* If we want to update the count after when it is triggered or call... We can do like this in Functional Component.
+  
+  //* Suppose i want to do something when count is changing and i want to do something when my count2 chnaging. So, in Functional Component using Two Hooks we can do that as:-
   useEffect(() => {
     // API Calls
-  }, [count, count2]);
+  }, [count]);
+  useEffect(() => {
+    // API Calls
+  }, [count2]);
 
   return (
     <div className="user-card">
