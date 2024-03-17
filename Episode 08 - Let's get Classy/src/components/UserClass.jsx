@@ -8,17 +8,18 @@ class UserClass extends React.Component {
       userInfo: {
         name: "Dummy Name",
         location: "Default",
-        avatar_url: "https://dummy-photo.com",
+        // avatar_url: "https://dummy-photo.com",
       },
     };
 
     console.log(this.props.name + " Child Constructor");
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     //console.log(this.props.name + " Child Component DidMount");
     //* API Call
 
+    /*
     const data = await fetch("https://api.github.com/users/akshaymarch7");
 
     const json = await data.json();
@@ -26,8 +27,13 @@ class UserClass extends React.Component {
     this.setState({
       userInfo: json,
     });
+    */
 
-    console.log(json);
+    this.timer = setInterval(() => {
+      console.log("React Grand Master");
+    }, 1000);
+
+    // console.log(json);
   }
 
   //* Suppose i want to do something when count is changing and i want to do something when my count2 chnaging. So, in Class Based Component we can do like this:-
@@ -46,6 +52,7 @@ class UserClass extends React.Component {
   }
 
   componentWillUnmount() {
+    clearInterval(this.timer);
     console.log("Component Will Unmount");
   }
 
