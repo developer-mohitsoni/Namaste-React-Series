@@ -13,16 +13,21 @@ const User = ({ name }) => {
 
   useEffect(() => {
 
+    const timer = setInterval(()=>{
+      console.log("React Grand Master");
+    },1000)
+
+
     console.log("useEffect"); //* Second called useEffect this
 
-
-    // This function is called when you Unmounting it
+    // This function is called when you Unmounting it (This is just like as Unmounting Phase)
     return () => {
-      console.log("useEffect return");  //* Third called useEffect return after i leaving the page 
+      clearInterval(timer);
+      console.log("useEffect return"); //* Third called useEffect return after i leaving the page
     };
   }, []);
 
-  console.log("render");  //* First render this
+  console.log("render"); //* First render this
 
   return (
     <div className="user-card">
