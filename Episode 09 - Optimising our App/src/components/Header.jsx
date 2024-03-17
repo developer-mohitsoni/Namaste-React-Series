@@ -1,11 +1,13 @@
 import Food from "../../assets/food.png";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import useLoginState from "../utils/useLoginState";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import "../../index.css";
 
 const Header = () => {
-  const [btnNameReact, setBtnNameReact] = useState("Login");
+  const { isLoggedIn, toggleLogin } = useLoginState();
+
   //* But How this const value is updated when we click on button?
 
   //* when we re-render the component by click on the button, this btnNameReact will be a new variable and it will be re-rendered with new value
@@ -22,8 +24,7 @@ const Header = () => {
   //* If dependency array is [btnNameReact] => useEffect is called every time btnNameReact is updated or changes.
   useEffect(() => {
     console.log("useEffect called");
-  }, [btnNameReact]); //* Here we put the dependency array over here. So, this dependency array changes the behaviour ofnit's render
-
+  }, []); //* Here we put the dependency array over here. So, this dependency array changes the behaviour ofnit's render
 
   const onlineStatus = useOnlineStatus();
 
@@ -48,15 +49,8 @@ const Header = () => {
           <li>
             <Link to="/cart">Cart</Link>
           </li>
-          <button
-            className="login"
-            onClick={() => {
-              btnNameReact === "Login"
-                ? setBtnNameReact("Logout")
-                : setBtnNameReact("Login");
-            }}
-          >
-            {btnNameReact}
+          <button className="login" onClick={toggleLogin}>
+            {isLoggedIn ? "Logout" : "Login"}
           </button>
         </ul>
       </div>
