@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import About from "./components/About";
+// import About from "./components/About";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import Error from "./components/Error";
@@ -23,6 +23,8 @@ import ShimmerUI from "./components/ShimmerUI";
 //* Dynamic Import
 
 const Grocery = lazy(() => import("./components/Grocery"));
+
+const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   //* console.log(<Body />); // This is a React Virtal DOM it prints an Object
@@ -45,7 +47,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />, // Load About Component when the route matches /about
+        element: <Suspense><About /></Suspense>, // Load About Component when the route matches /about
       },
       {
         path: "/contact",
