@@ -1,6 +1,7 @@
 import Food from "../../assets/food.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import "../../index.css";
 
 const Header = () => {
@@ -22,6 +23,10 @@ const Header = () => {
   useEffect(() => {
     console.log("useEffect called");
   }, [btnNameReact]); //* Here we put the dependency array over here. So, this dependency array changes the behaviour ofnit's render
+
+
+  const onlineStatus = useOnlineStatus();
+
   return (
     <div className="header">
       <div className="logo-container">
@@ -29,6 +34,7 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
+          <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
           <li>
             {/*! When i click on "Home" page it will not refresh the whole page, it will just fetches  data from server */}
             <Link to="/">Home</Link>
