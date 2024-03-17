@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import "../../index.css";
@@ -48,6 +49,14 @@ const Body = () => {
   //   return <ShimmerUI />;
   // }
 
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you are offline!! Please check your internet connection.
+      </h1>
+    );
   //* We can aslo use Ternary Operator as well to render Shimmer UI according to conditional rendering
   return listOfRestaurants.length === 0 ? (
     <ShimmerUI />
