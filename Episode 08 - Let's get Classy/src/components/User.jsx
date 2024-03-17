@@ -11,14 +11,18 @@ const User = ({ name }) => {
     if (count > 0) setCount(count - 1);
   };
 
-  
-  //* Suppose i want to do something when count is changing and i want to do something when my count2 chnaging. So, in Functional Component using Two Hooks we can do that as:-
   useEffect(() => {
-    // API Calls
-  }, [count]);
-  useEffect(() => {
-    // API Calls
-  }, [count2]);
+
+    console.log("useEffect"); //* Second called useEffect this
+
+
+    // This function is called when you Unmounting it
+    return () => {
+      console.log("useEffect return");  //* Third called useEffect return after i leaving the page 
+    };
+  }, []);
+
+  console.log("render");  //* First render this
 
   return (
     <div className="user-card">
