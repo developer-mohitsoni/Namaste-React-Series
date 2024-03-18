@@ -1,0 +1,5 @@
+NOTES.txt
+node_modules
+dist
+.parcel-cache
+cssOldFile.css
