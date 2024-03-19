@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
-import "../../index.css";
 
 const Body = () => {
   //* Local State Varibale - Super Powerful Variable
@@ -62,11 +61,11 @@ const Body = () => {
     <ShimmerUI />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="search flex ml-4 my-4 gap-[400px]">
+        <div className="pt-2">
           <input
             type="text"
-            className="search-box"
+            className="border borer-solid border-black"
             placeholder="Search for Restaurants"
             value={searchText} // here empty value is tightly coupled with searchText, Now wwhen we want to change the value of input, we have to change the value of searchText. So, in that case we use onChange event to change the value of searchText with new updated value
             onChange={(e) => {
@@ -79,6 +78,7 @@ const Body = () => {
             }}
           />
           <button
+            className="ml-2"
             onClick={() => {
               // Filter the restaurant cards and update the UI
               console.log(searchText);
@@ -93,11 +93,17 @@ const Body = () => {
               setFilteredRestaurant(filteredSearchRestraua);
             }}
           >
-            Search
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1.4em"
+              viewBox="0 0 512 512"
+            >
+              <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
           </button>
         </div>
         <button
-          className="filter-btn "
+          className="m-2 border border-solid border-black bg-gray-200 rounded-2xl w-52"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRatingString >= 4
@@ -110,10 +116,7 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div
-        className="rest-container"
-        style={{ display: "flex", flexWrap: "wrap", gap: "75px" }}
-      >
+      <div className="flex flex-wrap gap-20 justify-between">
         {/* Looping restList using map */}
         {filteredRestaurant.map((restaurant) => (
           //! You have to always mention unique key over here

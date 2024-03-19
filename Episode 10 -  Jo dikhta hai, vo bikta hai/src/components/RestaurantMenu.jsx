@@ -1,6 +1,7 @@
 import ShimmerUI from "./ShimmerUI";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { useParams } from "react-router-dom";
+import "../../index.css";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -16,7 +17,7 @@ const RestaurantMenu = () => {
     resInfo?.cards[0]?.card?.card?.info;
 
   const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
 
   console.log(itemCards);
 
@@ -33,8 +34,8 @@ const RestaurantMenu = () => {
         {itemCards.map((item) => {
           return (
             <li key={item.card.info.id}>
-              {" "}
-              {item.card.info.name} - ₹{item.card.info.price / 100}{" "}
+              {item.card.info.name} - ₹
+              {item.card.info.defaultPrice / 100 || item.card.info.price / 100}
             </li>
           );
         })}

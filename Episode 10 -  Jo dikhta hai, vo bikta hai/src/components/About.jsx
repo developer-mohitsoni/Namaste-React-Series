@@ -11,7 +11,7 @@ class About extends React.Component {
   }
 
   componentDidMount() {
-    //console.log("Parent Component DidMount"); 
+    //console.log("Parent Component DidMount");
   }
 
   render() {
@@ -20,7 +20,7 @@ class About extends React.Component {
       <div>
         <h1>About Us</h1>
         <h2>This is Namaste React WebSeries</h2>
-        <User name={"Mohit Soni"}/>
+        <User name={"Mohit Soni"} />
         <UserClass
           name={"Mohit Soni (class)"}
           location={"UttarPradesh"}

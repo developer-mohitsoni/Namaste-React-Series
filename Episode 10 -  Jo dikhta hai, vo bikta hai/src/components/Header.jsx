@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import useLoginState from "../utils/useLoginState";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import "../../index.css";
 
 const Header = () => {
   const { isLoggedIn, toggleLogin } = useLoginState();
@@ -29,12 +28,12 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="flex justify-between items-start border-[1px] border-solid border-black mx-1 my-1 h-32">
       <div className="logo-container">
-        <img className="logo" src={Food} alt="Food Logo" />
+        <img className="w-36" src={Food} alt="Food Logo" />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="mr-16 flex pt-5">
+        <ul className="flex list-none gap-20 text-2xl">
           <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
           <li>
             {/*! When i click on "Home" page it will not refresh the whole page, it will just fetches  data from server */}
@@ -52,7 +51,10 @@ const Header = () => {
           <li>
             <Link to="/grocery">Grocery</Link>
           </li>
-          <button className="login" onClick={toggleLogin}>
+          <button
+            className="-mt-1 appearance-none bg-[#fcfcfd] rounded-[4px] shadow-newBox-shadow box-border text-blue-950 inline-flex font-mono h-12 justify-center overflow-hidden px-4 select-none touch-manipulation whitespace-nowrap text-2xl  focus:shadow-newBox-shadow2  hover:shadow-newBox-shadow3  active:shadow-newBox-shadow4"
+            onClick={toggleLogin}
+          >
             {isLoggedIn ? "Logout" : "Login"}
           </button>
         </ul>

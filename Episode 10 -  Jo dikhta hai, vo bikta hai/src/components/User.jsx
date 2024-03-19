@@ -12,11 +12,9 @@ const User = ({ name }) => {
   };
 
   useEffect(() => {
-
-    const timer = setInterval(()=>{
+    const timer = setInterval(() => {
       console.log("React Grand Master");
-    },1000)
-
+    }, 1000);
 
     console.log("useEffect"); //* Second called useEffect this
 
@@ -30,7 +28,7 @@ const User = ({ name }) => {
   console.log("render"); //* First render this
 
   return (
-    <div className="user-card">
+    <div className="pt-2.5 border-[1px] border-solid border-black">
       <h1>Count = {count}</h1>
       <button onClick={handleClick}>Count Increase</button>&nbsp;&nbsp;
       <button onClick={handleClick2}>Count Decrease</button>
