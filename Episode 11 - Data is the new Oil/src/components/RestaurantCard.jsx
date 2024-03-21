@@ -1,4 +1,4 @@
-import { CDN_URL} from "../utils/constants";
+import { CDN_URL } from "../utils/constants";
 import "../../index.css";
 
 const RestaurantCard = (props) => {
@@ -16,17 +16,22 @@ const RestaurantCard = (props) => {
   } = restData?.info;
 
   const { lastMileTravelString } = restData?.info?.sla;
+
+  const { header, subHeader } = restData?.info?.aggregatedDiscountInfoV3 || {};
   return (
     <div
       className="w-72 h-[350px] p-2 rounded-3xl shadow-3xl hover:shadow-custom-shadow"
       data-aos="zoom-in"
     >
-      <div className="w-full h-52">
+      <div className="w-full h-52 relative">
         <img
           src={CDN_URL + cloudinaryImageId}
           alt="Shankar Foods"
-          className="w-full h-full rounded-2xl object-cover"
+          className="w-full h-full rounded-2xl object-cover relative"
         />
+        <div className="absolute top-[175px] text-white font-extrabold text-2xl left-0 bg-gradient-to-br from-transparent to-black rounded-lg w-[272px] text-center backdrop-saturate-200">
+          {header} {subHeader}
+        </div>
       </div>
       <div className="food-info">
         <div className="flex justify-between">
@@ -79,6 +84,26 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
+};
+
+//! Higer Order Component
+
+//input - RestaurantCard => RestaurantCardCategory
+
+export const withFoodType = (RestaurantCard) => {
+  // Now this return function will return some pieces of JSX
+  // We will receive props here:-
+  return (props) => {
+    // Enhance Component
+    return (
+      <div>
+        <label className="absolute z-10 m-2 p-2 rounded-xl bg-black text-white">
+          Veg
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

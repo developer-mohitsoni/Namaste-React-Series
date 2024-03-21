@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withFoodType } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import ShimmerUI from "./ShimmerUI";
@@ -14,7 +14,10 @@ const Body = () => {
 
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
-  console.log("Body Render"); //* Whenever my Search input filed is updated, my body component is re-rendered 🚀
+  // Higher Order Component (HOC) Calling and return the new enhanced component
+  const RestaurantCardCategory = withFoodType(RestaurantCard);
+
+  console.log("Body Render", listOfRestaurants); //* Whenever my Search input filed is updated, my body component is re-rendered 🚀
 
   useEffect(() => {
     fetchData();
@@ -125,7 +128,12 @@ const Body = () => {
             to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            <RestaurantCard restData={restaurant} />
+            {/* If the restaurant is promoted then add a promoted label to it */}
+            {restaurant.info.veg ? (
+              <RestaurantCardCategory restData={restaurant} />
+            ) : (
+              <RestaurantCard restData={restaurant} />
+            )}
           </Link>
 
           //* not using keys (not acceptable) <<<< index as key <<<<<<<<<<<<< unique id (best practice)
