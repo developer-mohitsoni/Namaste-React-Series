@@ -17,7 +17,7 @@ const Body = () => {
   // Higher Order Component (HOC) Calling and return the new enhanced component
   const RestaurantCardCategory = withFoodType(RestaurantCard);
 
-  console.log("Body Render", listOfRestaurants); //* Whenever my Search input filed is updated, my body component is re-rendered 🚀
+  // console.log("Body Render", listOfRestaurants); //* Whenever my Search input filed is updated, my body component is re-rendered 🚀
 
   useEffect(() => {
     fetchData();
@@ -84,7 +84,7 @@ const Body = () => {
             className="ml-2"
             onClick={() => {
               // Filter the restaurant cards and update the UI
-              console.log(searchText);
+              // console.log(searchText);
 
               const filteredSearchRestraua = listOfRestaurants.filter((res) => {
                 //* includes will check if the searchText is present in the name of the restaurant

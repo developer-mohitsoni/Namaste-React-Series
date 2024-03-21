@@ -1,7 +1,9 @@
 import Food from "../../assets/food.png";
-import { useEffect } from "react";
+//* React provide a feature to access the context using hook named as "useContext".
+import { useEffect, useContext } from "react";
 import useLoginState from "../utils/useLoginState";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
@@ -27,13 +29,16 @@ const Header = () => {
 
   const onlineStatus = useOnlineStatus();
 
+  const { loggedInUser } = useContext(UserContext);
+  console.log(loggedInUser);
+
   return (
     <div className="flex justify-between items-start border-[1px] border-solid border-black mx-1 my-1 h-32">
       <div className="logo-container">
         <img className="w-36" src={Food} alt="Food Logo" />
       </div>
       <div className="mr-16 flex pt-5">
-        <ul className="flex list-none gap-20 text-2xl">
+        <ul className="flex list-none gap-14 text-2xl">
           <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
           <li>
             {/*! When i click on "Home" page it will not refresh the whole page, it will just fetches  data from server */}
@@ -46,9 +51,6 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-          <li>
             <Link to="/grocery">Grocery</Link>
           </li>
           <button
@@ -57,6 +59,7 @@ const Header = () => {
           >
             {isLoggedIn ? "Logout" : "Login"}
           </button>
+          <li className="font-bold">{loggedInUser}</li>
         </ul>
       </div>
     </div>
