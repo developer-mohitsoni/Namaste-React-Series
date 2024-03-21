@@ -1,14 +1,11 @@
 import ItemsList from "./ItemsList";
 import { useState } from "react";
 
-const RestaurantCategory = ({ data }) => {
-  //   console.log(data);
+//! So this is now a Controlled Component, If the Restaurant Category Controlling itself it would have been a Unontrolled Component. If it doesn't have a power to Controlling itself then it is called to be Controlled Component.
 
-  const [showItem, setShowItem] = useState(false);
-
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const handleClick = () => {
-    // console.log("clicked");
-    setShowItem(!showItem);
+    setShowIndex();
   };
   return (
     <div>
@@ -21,10 +18,10 @@ const RestaurantCategory = ({ data }) => {
           <span className="font-bold text-lg">
             {data.title} ({data.itemCards.length})
           </span>
-          <span>⬇️</span>
+          <span>{showItems ? "⬇️" : "⬆️"}</span>
         </div>
 
-        {showItem && <ItemsList items={data.itemCards} />}
+        {showItems && <ItemsList items={data.itemCards} />}
       </div>
       {/*Accordion Body */}
     </div>
