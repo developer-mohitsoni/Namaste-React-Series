@@ -11,6 +11,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import ShimmerUI from "./components/ShimmerUI";
 import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // import Grocery from "./components/Grocery";
 
 //! React Components:-
@@ -46,13 +48,15 @@ const AppLayout = () => {
     // Here we create UserContext.Provider inside contains Header and Outlet Component.
     // If it only contains inside Header Component, then it will only be visible inside Header Component rest of places shows Default Component.
 
-    //* Default Value
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      //* Default Value
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
