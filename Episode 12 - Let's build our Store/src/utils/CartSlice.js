@@ -7,6 +7,7 @@ const createSlice = createSlice({
   },
   reducer: {
     addItem: (state, action) => {
+        //* Mutating the state over here
       state.items.push(action.payload);
     },
     removeItem: (state) => {
