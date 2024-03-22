@@ -49,7 +49,7 @@ const AppLayout = () => {
     // If it only contains inside Header Component, then it will only be visible inside Header Component rest of places shows Default Component.
 
     <Provider store={appStore}>
-      //* Default Value
+      {/* Default Value */}
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
         <div className="app">
           <Header />
