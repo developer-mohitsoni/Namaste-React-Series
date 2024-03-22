@@ -1,5 +1,16 @@
+import { addItem } from "../utils/CartSlice";
+import { useDispatch } from "react-redux";
+
 const ItemsList = ({ items }) => {
   //   console.log(items);
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    //* Dispatch an action
+
+    dispatch(addItem(item));
+  };
   return (
     <div>
       {items.map((item) => (
@@ -17,7 +28,10 @@ const ItemsList = ({ items }) => {
                   : item.card.info.defaultPrice / 100}
               </span>
             </div>
-            <button className="bg-white w-24 rounded-md text-green-400 font-bold border-2 shadow-md hover:shadow-lg">
+            <button
+              className="bg-white w-24 rounded-md text-green-400 font-bold border-2 shadow-md hover:shadow-lg"
+              onClick={() => handleAddItem(item)}
+            >
               ADD
             </button>
           </div>
