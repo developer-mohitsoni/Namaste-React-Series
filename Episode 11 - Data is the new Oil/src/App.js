@@ -35,11 +35,11 @@ const AppLayout = () => {
   useEffect(() => {
     // Make an API call and send username and password
     const data = {
-      name: "Mohit Verma",
+      name: "Mohit Soni",
     };
 
     setUserName(data.name);
-  });
+  }, []);
 
   //* console.log(<Body />); // This is a React Virtal DOM it prints an Object
   return (
@@ -47,13 +47,9 @@ const AppLayout = () => {
     // If it only contains inside Header Component, then it will only be visible inside Header Component rest of places shows Default Component.
 
     //* Default Value
-    <UserContext.Provider value={{ loggedInUser: userName }}>
-      //* Mohit Soni
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
       <div className="app">
-        <UserContext.Provider value={{ loggedInUser: "Mohit Soni" }}>
-          //* Mohit Soni
-          <Header />
-        </UserContext.Provider>
+        <Header />
         <Outlet />
       </div>
     </UserContext.Provider>

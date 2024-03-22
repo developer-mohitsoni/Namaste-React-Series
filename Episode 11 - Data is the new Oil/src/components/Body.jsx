@@ -1,8 +1,9 @@
 import RestaurantCard, { withFoodType } from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   //* Local State Varibale - Super Powerful Variable
@@ -59,12 +60,14 @@ const Body = () => {
         Looks like you are offline!! Please check your internet connection.
       </h1>
     );
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
   //* We can aslo use Ternary Operator as well to render Shimmer UI according to conditional rendering
   return listOfRestaurants.length === 0 ? (
     <ShimmerUI />
   ) : (
     <div className="body">
-      <div className="search flex ml-4 my-4 gap-[400px]">
+      <div className="search flex ml-4 my-4 gap-[350px]">
         <div className="pt-2">
           <input
             type="text"
@@ -118,6 +121,15 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div>
+          <label>UserName:- </label>
+          <input
+            type="text"
+            className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
       <div className="flex flex-wrap gap-20 justify-between">
         {/* Looping restList using map */}
