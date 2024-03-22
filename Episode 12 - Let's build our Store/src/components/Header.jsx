@@ -5,6 +5,7 @@ import useLoginState from "../utils/useLoginState";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const { isLoggedIn, toggleLogin } = useLoginState();
@@ -32,12 +33,18 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
   console.log(loggedInUser);
 
+  //* Subscribing to the store using a Selector
+
+  //* Reading the Store
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
+
   return (
     <div className="flex justify-between items-start border-[1px] border-solid border-black mx-1 my-1 h-32">
       <div className="logo-container">
         <img className="w-36" src={Food} alt="Food Logo" />
       </div>
-      <div className="mr-16 flex pt-5">
+      <div className="mr-2 flex pt-5">
         <ul className="flex list-none gap-14 text-2xl">
           <li>Online Status: {onlineStatus ? "🟢" : "🔴"}</li>
           <li>
@@ -51,7 +58,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart - ({cartItems.length} items)</Link>
           </li>
           <li>
             <Link to="/grocery">Grocery</Link>
