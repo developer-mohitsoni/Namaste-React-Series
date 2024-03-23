@@ -22,9 +22,9 @@ test("Should load Contact Us Component", () => {
 test("Should load Button inside my Contact Us Component", () => {
   render(<Contact />);
 
-  // There is one more way to check whether my component has Button or not.
-  // If my scrren has anywhere where text occur "Submit":-
-  const button = screen.getByText("Submit");
+  // There is one more way to check whether my component has placeholdren inside HTML form or not.
+  // If my screen has placeholdren inside my render Component then it will be passed the test case
+  const button = screen.getByPlaceholderText("name");
 
   expect(button).toBeInTheDocument();
 });
