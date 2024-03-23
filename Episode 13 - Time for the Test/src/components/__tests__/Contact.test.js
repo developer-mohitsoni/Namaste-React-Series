@@ -44,4 +44,7 @@ test("Should load 2 input boxes on Contact Component", () => {
 
   //* Assertion
   expect(inputBoxes.length).toBe(2);
+
+  //* You can also write like this with the help of "not.toBe()"
+  expect(inputBoxes.length).not.toBe(3);
 });
