@@ -28,3 +28,20 @@ test("Should load Button inside my Contact Us Component", () => {
 
   expect(button).toBeInTheDocument();
 });
+
+//* Suppose if i want to test whether my Rendered Component has 2 input boxes or not.
+
+test("Should load 2 input boxes on Contact Component", () => {
+  render(<Contact />);
+
+  //* The Role of input boxes is "textbox"
+  //! NOTE:- If there are multiple items which matches the query and you are using getByRole(),getByPlaceholderText() then it will throw an error. You should use getAllByRole() or getAllByPlaceholderText().
+
+  //* Querying
+  const inputBoxes = screen.getAllByRole("textbox");
+
+  console.log(inputBoxes[0]);
+
+  //* Assertion
+  expect(inputBoxes.length).toBe(2);
+});
