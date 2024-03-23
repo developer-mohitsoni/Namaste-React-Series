@@ -115,3 +115,4 @@
 - Install Jest
 - Installed Babel Dependencies
 - Configure Babel
+- Configure Parcel Config files to disable default babel transpilation.
