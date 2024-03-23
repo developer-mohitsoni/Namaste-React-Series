@@ -22,8 +22,9 @@ test("Should load Contact Us Component", () => {
 test("Should load Button inside my Contact Us Component", () => {
   render(<Contact />);
 
-  // Role can be "heading", "button" there may be different types of Roles
-  const button = screen.getByRole("button");
+  // There is one more way to check whether my component has Button or not.
+  // If my scrren has anywhere where text occur "Submit":-
+  const button = screen.getByText("Submit");
 
   expect(button).toBeInTheDocument();
 });
