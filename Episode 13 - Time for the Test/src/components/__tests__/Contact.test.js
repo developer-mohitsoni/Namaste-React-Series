@@ -16,3 +16,14 @@ test("Should load Contact Us Component", () => {
   // Assertion:-
   expect(heading).toBeInTheDocument();
 });
+
+//* Writing another test case to check whether my component has Button or not.
+
+test("Should load Button inside my Contact Us Component", () => {
+  render(<Contact />);
+
+  // Role can be "heading", "button" there may be different types of Roles
+  const button = screen.getByRole("button");
+
+  expect(button).toBeInTheDocument();
+});
