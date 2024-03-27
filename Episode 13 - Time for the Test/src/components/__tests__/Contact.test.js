@@ -8,7 +8,7 @@ import "@testing-library/jest-dom";
 //! Grouping the Test Cases:-
 
 describe("Contact Us Page Test Cases",()=>{
-  test("Should load Contact Us Component", () => {
+  it("Should load Contact Us Component", () => {
     // This will be render to the JS DOM
     render(<Contact />);
   
@@ -22,7 +22,7 @@ describe("Contact Us Page Test Cases",()=>{
   
   //* Writing another test case to check whether my component has Button or not.
   
-  test("Should load Button inside my Contact Us Component", () => {
+  it("Should load Button inside my Contact Us Component", () => {
     render(<Contact />);
   
     // There is one more way to check whether my component has placeholdren inside HTML form or not.
@@ -34,7 +34,7 @@ describe("Contact Us Page Test Cases",()=>{
   
   //* Suppose if i want to test whether my Rendered Component has 2 input boxes or not.
   
-  test("Should load 2 input boxes on Contact Component", () => {
+  it("Should load 2 input boxes on Contact Component", () => {
     render(<Contact />);
   
     //* The Role of input boxes is "textbox"
