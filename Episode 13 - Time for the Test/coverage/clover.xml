@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1711600453184" clover="3.2.0">
-  <project timestamp="1711600453184" name="All files">
-    <metrics statements="31" coveredstatements="25" conditionals="4" coveredconditionals="3" methods="14" coveredmethods="9" elements="49" coveredelements="37" complexity="0" loc="31" ncloc="31" packages="2" files="8" classes="8"/>
+<coverage generated="1711604054805" clover="3.2.0">
+  <project timestamp="1711604054805" name="All files">
+    <metrics statements="43" coveredstatements="35" conditionals="6" coveredconditionals="4" methods="17" coveredmethods="10" elements="66" coveredelements="49" complexity="0" loc="43" ncloc="43" packages="2" files="10" classes="10"/>
     <package name="components">
-      <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="5"/>
+      <metrics statements="20" coveredstatements="18" conditionals="6" coveredconditionals="4" methods="8" coveredmethods="6"/>
       <file name="Contact.jsx" path="C:\Users\devel\Desktop\Namaste React Series\Episode 13 - Time for the Test\src\components\Contact.jsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -19,6 +19,18 @@
         <line num="39" count="7" type="stmt"/>
         <line num="42" count="4" type="stmt"/>
       </file>
+      <file name="RestaurantCard.jsx" path="C:\Users\devel\Desktop\Namaste React Series\Episode 13 - Time for the Test\src\components\RestaurantCard.jsx">
+        <metrics statements="9" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+      </file>
       <file name="sum.js" path="C:\Users\devel\Desktop\Namaste React Series\Episode 13 - Time for the Test\src\components\sum.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -26,7 +38,7 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="20" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="4"/>
+      <metrics statements="23" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="4"/>
       <file name="CartSlice.js" path="C:\Users\devel\Desktop\Namaste React Series\Episode 13 - Time for the Test\src\utils\CartSlice.js">
         <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
@@ -43,6 +55,12 @@
       <file name="appStore.js" path="C:\Users\devel\Desktop\Namaste React Series\Episode 13 - Time for the Test\src\utils\appStore.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="constants.js" path="C:\Users\devel\Desktop\Namaste React Series\Episode 13 - Time for the Test\src\utils\constants.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
       </file>
       <file name="useLoginState.js" path="C:\Users\devel\Desktop\Namaste React Series\Episode 13 - Time for the Test\src\utils\useLoginState.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>

@@ -142,9 +142,9 @@ const Body = () => {
           >
             {/* If the restaurant is promoted then add a promoted label to it */}
             {restaurant.info.veg ? (
-              <RestaurantCardCategory restData={restaurant} />
+              <RestaurantCardCategory restData={restaurant.info} />
             ) : (
-              <RestaurantCard restData={restaurant} />
+              <RestaurantCard restData={restaurant.info} />
             )}
           </Link>
 

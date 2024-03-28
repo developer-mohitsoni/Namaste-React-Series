@@ -13,11 +13,11 @@ const RestaurantCard = (props) => {
     cuisines,
     costForTwo,
     locality,
-  } = restData?.info;
+  } = restData;
 
-  const { lastMileTravelString } = restData?.info?.sla;
+  const { lastMileTravelString } = restData?.sla;
 
-  const { header, subHeader } = restData?.info?.aggregatedDiscountInfoV3 || {};
+  const { header, subHeader } = restData?.aggregatedDiscountInfoV3 || {};
   return (
     <div
       className="w-72 h-[350px] p-2 rounded-3xl shadow-3xl hover:shadow-custom-shadow"
