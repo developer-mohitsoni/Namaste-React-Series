@@ -15,7 +15,7 @@ const Header = () => {
   //* when we re-render the component by click on the button, this btnNameReact will be a new variable and it will be re-rendered with new value
 
   //! useState will re-render whole componenet when state changes
-  console.log("Header Render");
+  // console.log("Header Render");
 
   //* useEffect() will be called every time my Header Component renders my useEffect is called.
 
@@ -25,19 +25,19 @@ const Header = () => {
 
   //* If dependency array is [btnNameReact] => useEffect is called every time btnNameReact is updated or changes.
   useEffect(() => {
-    console.log("useEffect called");
+    // console.log("useEffect called");
   }, []); //* Here we put the dependency array over here. So, this dependency array changes the behaviour ofnit's render
 
   const onlineStatus = useOnlineStatus();
 
   const { loggedInUser } = useContext(UserContext);
-  console.log(loggedInUser);
+  // console.log(loggedInUser);
 
   //* Subscribing to the store using a Selector
 
   //* Reading the Store
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="flex justify-between items-start border-[1px] border-solid border-black mx-1 my-1 h-32">
