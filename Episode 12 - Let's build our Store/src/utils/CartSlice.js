@@ -5,6 +5,8 @@ const CartSlice = createSlice({
   initialState: {
     items: [], //* Initialize with initial state
   },
+
+  //* They are contain multiple small reducer functions that's why we named as :- reducers
   reducers: {
     addItem: (state, action) => {
       //* Vanilla(older) Redux => DON'T MUTATE THE STATE
@@ -35,4 +37,6 @@ const CartSlice = createSlice({
 });
 
 export const { addItem, removeItem, clearCart } = CartSlice.actions;
+
+//* This reducer while exporting is a combination of above small reducer function. This is one reducer while exporting.
 export default CartSlice.reducer;
