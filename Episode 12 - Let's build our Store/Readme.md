@@ -54,7 +54,7 @@
 
 ## Redux Tookit
 
-- Install @reduxjs/tookit and react-redux
+- Install @reduxjs/toolkit and react-redux
 - Build our store
 - Connect our store to our App
 - Slice (cartSlice)
