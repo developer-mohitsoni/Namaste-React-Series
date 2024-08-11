@@ -22,22 +22,23 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    // fetch will return a promise
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.4924134&lng=77.673673&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    try {
+      const data = await fetch(
+        "https://www.swiggy.com/mapi/homepage/getCards?lat=27.5009243&lng=77.6598626"
+      );
 
-    const json = await data.json();
+      const json = await data.json();
+      const restaurants =
+        json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle
+          ?.restaurants || [];
 
-    // console.log(json);
-
-    //! Optional Chaining
-    setListOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+      setListOfRestaurants(restaurants);
+      setFilteredRestaurant(restaurants);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setListOfRestaurants([]); // Ensure it's an empty array if there's an error
+      setFilteredRestaurant([]); // Ensure it's an empty array if there's an error
+    }
   };
 
   // Showing a spinner is not a good practice
