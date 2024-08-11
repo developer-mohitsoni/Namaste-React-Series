@@ -1,4 +1,5 @@
-import RestaurantCard, { withFoodType } from "./RestaurantCard";
+import RestaurantCard from "./RestaurantCard";
+import { withFoodType } from "./HigherOrderRestaurantCard";
 import { useState, useEffect, useContext } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import ShimmerUI from "./ShimmerUI";
@@ -16,6 +17,8 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   // Higher Order Component (HOC) Calling and return the new enhanced component
+
+  // abb isske andar mere wo saare cards aa jaayege jiske paas food label hoga sirf wo hi
   const RestaurantCardCategory = withFoodType(RestaurantCard);
 
   // console.log("Body Render", listOfRestaurants); //* Whenever my Search input filed is updated, my body component is re-rendered 🚀
