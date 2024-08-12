@@ -1,10 +1,10 @@
 import { CDN_URL, styleCard } from "../utils/constants";
 import "../../index.css";
 
-const RestaurantCard = (props) => {
+const RestaurantCard = ({restData}) => {
   // console.log(props);
   // Object Destructuring
-  const { restData } = props;
+  // const { restData } = props;
 
   const {
     cloudinaryImageId,
