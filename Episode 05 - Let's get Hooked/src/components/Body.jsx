@@ -20,7 +20,7 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRatingString >= 4
             );
-            // console.log(listOfRestaurants);
+            console.log(filteredList);
             // Updating State from Local State Variable
             setListOfRestaurants(filteredList);
           }}
