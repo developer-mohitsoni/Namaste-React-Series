@@ -46,9 +46,12 @@ const styleCard = {
 };
 
 const RestaurantCard = (props) => {
-  // console.log(props);
+  console.log(props);
   // Object Destructuring
   const { restData } = props;
+
+  console.log(restData);
+  
 
   const {
     cloudinaryImageId,
